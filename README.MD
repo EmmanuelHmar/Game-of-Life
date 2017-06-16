@@ -1,4 +1,5 @@
 Name: Game of Life
+Exercise: 53.2
 Language: Java
 Course: MOOC Helsinki
 
