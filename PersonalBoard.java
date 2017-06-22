@@ -3,7 +3,7 @@ package game;
 import gameoflife.GameOfLifeBoard;
 import java.util.Random;
 
-//43.4
+//43
 
 public class PersonalBoard extends GameOfLifeBoard {
 
