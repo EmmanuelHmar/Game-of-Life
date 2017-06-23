@@ -15,7 +15,8 @@ public class PersonalBoard extends GameOfLifeBoard {
     //Set the input location to alive
     public void turnToLiving(int x, int y) {
         boolean[][] board = getBoard();//Get the board from the given pre-framework
-        if (x < 0 || x >= super.getWidth() || y < 0 || y >= super.getHeight()) {
+
+		if (!isInsideBoard(x,y)) {
             return; //Nothing happens if location is outside board
         }
 
@@ -27,7 +28,7 @@ public class PersonalBoard extends GameOfLifeBoard {
     public void turnToDead(int x, int y) {
         boolean[][] board = getBoard();
 
-        if (x < 0 || x >= super.getWidth() || y < 0 || y >= super.getHeight()) {
+        if (!isInsideBoard(x,y)) {
             return;
         }
 
@@ -39,11 +40,20 @@ public class PersonalBoard extends GameOfLifeBoard {
     public boolean isAlive(int x, int y) {
         boolean[][] board = getBoard();
 
-        if (x < 0 || x >= super.getWidth() || y < 0 || y >= super.getHeight()) {
+        if (!isInsideBoard(x,y)) {
             return false; //False if location is outside board
         }
 
         return board[x][y];
+    }
+	
+	 //Method to check if the location is inside the board
+    private boolean isInsideBoard(int x, int y) {
+        if (x < 0 || x >= super.getWidth() || y < 0 || y >= super.getHeight()) {
+            return false;
+        }
+
+        return true;
     }
 
     //The input value percentage is set to alive
